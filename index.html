@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sources List Generator for Debian</title>
+		
+	</head>
+	<body>
+		<main>
+			<div class="wrap--header">
+				<div class="wrap">
+					<h2 class="header">Sources List Generator for Debian</h2>
+				</div>
+			</div>
+			<div class="wrap">
+				<div class="elemnts--inline">
+					<p><label>http<br>
+					<select name="http">
+						<option value="http://mirrors.zzu.edu.cn/ubuntu">http</option>
+						<option value="https://mirrors.zzu.edu.cn/ubuntu"  selected>https</option>
+					</select></label></p>
+
+					<p><label>Releases<br>
+					<select name="releases">
+						<option value="artful" data-updates>artful (17.10)</option>
+						<option value="zesty" data-updates  selected>zesty (17.04)</option>
+						<option value="yakkety" data-updates>yakkety (16.10)</option>
+						<option value="xenial" data-updates>xenial (16.04 LTS)</option>
+						<option value="wily" data-updates>wily (15.10) </option>
+						<option value="vivid" data-updates>vivid (15.04) </option>
+						<option value="trusty" data-updates>trusty (14.04 LTS)</option>
+						<option value="precise" data-updates>precise (12.04 LTS)</option>
+					</select></label></p>
+
+					<p style="display:none;"><label><br>
+					<select name="arch">
+						<option selected></option>
+						
+					</select></label></p>
+				</div>
+
+				<p>
+				<label><input name="src" type="checkbox">包含源码(会减慢apt update速度)</label><br>
+					<label><input name="backports" type="checkbox" checked>包含backports</label><br/>
+									<label><input name="security" type="checkbox" checked>包含security</label><br/>
+									<label><input name="proposed" type="checkbox">包含proposed(预发布软件源),不建议使用</label><br/>
+					</p>
+
+				<p><label>Source List<br>
+				<textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="list" rows="10" cols="100"></textarea></label></p>
+			</div>
+		</main>
+
+
+		<script src="app.js"></script>
+
+	</body>
+</html>
